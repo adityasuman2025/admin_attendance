@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewCourseInfo">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/courseCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="10px"
+        android:textSize="100px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="60px"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:layout_marginTop="40px"
+        android:text="Professors"
+        android:background="@color/lightgrey"
+        android:padding="10px"
+        />
+
+    <ListView
+        android:id="@+id/profLV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50px">
+    </ListView>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="45px"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="60px"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:text="Students"
+        android:background="@color/lightgrey"
+        android:padding="10px"
+        />
+
+    <ListView
+        android:id="@+id/studLV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50px">
+    </ListView>
+
+</LinearLayout>
