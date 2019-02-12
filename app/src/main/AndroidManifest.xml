@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/logo_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Register"
+            android:label="Admin Registration" />
         <activity
             android:name=".Dashboard"
             android:label="Admin Dashboard" />

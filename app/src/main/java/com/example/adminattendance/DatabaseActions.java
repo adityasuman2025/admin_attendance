@@ -82,6 +82,166 @@ public class DatabaseActions extends AsyncTask<String,Void,String>
                 e.printStackTrace();
             }
         }
+        else if (type.equals("check_admin_phone_registered")) {
+            String login_url = base_url + "check_admin_phone_registered.php";
+            try {
+                String androidId = params[1];
+                String uniqueID = params[2];
+
+                //connecting with server
+                url = new URL(login_url);
+                HttpURLConnection httpURLConnection = null;
+                httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+
+                //sending phone info to the server
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+
+                String post_data = URLEncoder.encode("androidId", "UTF-8") + "=" + URLEncoder.encode(androidId, "UTF-8") + "&"
+                        + URLEncoder.encode("uniqueID", "UTF-8") + "=" + URLEncoder.encode(uniqueID, "UTF-8");
+
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                //getting the data coming from server after logging
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+
+                result = "";
+                String line;
+
+                while ((line = bufferedReader.readLine()) != null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (type.equals("check_admin_username_exist")) {
+            String login_url = base_url + "check_admin_username_exist.php";
+            try {
+                String username = params[1];
+
+                //connecting with server
+                url = new URL(login_url);
+                HttpURLConnection httpURLConnection = null;
+                httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+
+                //sending phone info to the server
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+
+                String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
+
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                //getting the data coming from server after logging
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+
+                result = "";
+                String line;
+
+                while ((line = bufferedReader.readLine()) != null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (type.equals("register_new_admin_in_db")) {
+            String login_url = base_url + "register_new_admin_in_db.php";
+            try {
+                String name = params[1];
+                String email = params[2];
+                String phone = params[3];
+
+                String username = params[4];
+                String password = params[5];
+
+                String androidId = params[6];
+                String uniqueID = params[7];
+
+                //connecting with server
+                url = new URL(login_url);
+                HttpURLConnection httpURLConnection = null;
+                httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+
+                //sending phone info to the server
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+
+                String post_data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&"
+                        + URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8") + "&"
+                        + URLEncoder.encode("phone", "UTF-8") + "=" + URLEncoder.encode(phone, "UTF-8") + "&"
+                        + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&"
+                        + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8") + "&"
+                        + URLEncoder.encode("androidId", "UTF-8") + "=" + URLEncoder.encode(androidId, "UTF-8") + "&"
+                        + URLEncoder.encode("uniqueID", "UTF-8") + "=" + URLEncoder.encode(uniqueID, "UTF-8");
+
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                //getting the data coming from server after logging
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+
+                result = "";
+                String line;
+
+                while ((line = bufferedReader.readLine()) != null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         return result;
     }
