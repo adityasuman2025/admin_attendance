@@ -242,6 +242,41 @@ public class DatabaseActions extends AsyncTask<String,Void,String>
                 e.printStackTrace();
             }
         }
+        else if(type.equals("get_courses"))
+        {
+            String login_url = base_url + "get_courses.php";
+            try
+            {
+                //connecting with server
+                url = new URL(login_url);
+                HttpURLConnection httpURLConnection = null;
+                httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+
+                //getting the data coming from server
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+
+                result="";
+                String line;
+
+                while((line = bufferedReader.readLine())!= null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         return result;
     }

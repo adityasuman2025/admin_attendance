@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity
         }
         else //if someone is already logged in
         {
-            //redirecting the list course page
-//            Intent ListCourseIntent = new Intent(MainActivity.this, Dashboard.class);
-//            startActivity(ListCourseIntent);
-//            finish(); //used to delete the last activity history which we want to delete
+        //redirecting the list course page
+            Intent ListCourseIntent = new Intent(MainActivity.this, Dashboard.class);
+            startActivity(ListCourseIntent);
+            finish(); //used to delete the last activity history which we want to delete
         }
 
         //to get unique identification of a phone and displaying it

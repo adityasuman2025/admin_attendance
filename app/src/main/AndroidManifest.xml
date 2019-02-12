@@ -13,7 +13,12 @@
         android:roundIcon="@drawable/logo_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register"
+        <activity android:name=".ViewStudentAttendance"
+            android:label="View Course Attendance" />
+        <activity android:name=".ViewCourseInfo"
+            android:label="View Course Info" />
+        <activity
+            android:name=".Register"
             android:label="Admin Registration" />
         <activity
             android:name=".Dashboard"
