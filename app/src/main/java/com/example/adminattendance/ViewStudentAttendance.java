@@ -67,7 +67,7 @@ public class ViewStudentAttendance extends AppCompatActivity
         {
             try
             {
-                //to get count of classes for a course
+            //to get count of classes for a course
                 type= "get_course_class_count";
                 String get_course_class_count_result = (new DatabaseActions().execute(type, course_id_cookie).get());
 
