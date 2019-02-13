@@ -13,9 +13,15 @@
         android:roundIcon="@drawable/logo_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewStudentAttendance"
+        <activity android:name=".DeleteCourse"
+            android:label="Delete Course" />
+        <activity android:name=".AddCourse"
+            android:label="Add Course" />
+        <activity
+            android:name=".ViewStudentAttendance"
             android:label="View Course Attendance" />
-        <activity android:name=".ViewCourseInfo"
+        <activity
+            android:name=".ViewCourseInfo"
             android:label="View Course Info" />
         <activity
             android:name=".Register"
