@@ -52,8 +52,9 @@ public class DeleteCourse extends AppCompatActivity
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED)
         {
-            try {
-                //getting the list of all courses in the database
+            try
+            {
+            //getting the list of all courses in the database
                 type = "get_courses";
                 String get_courseResults = new DatabaseActions().execute(type).get();
 

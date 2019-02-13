@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddCourse">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/course_code_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="150px"
+            android:ems="10"
+            android:hint="Course Code"
+            android:inputType="textCapCharacters"
+            android:layout_margin="10px"
+            />
+
+        <EditText
+            android:id="@+id/course_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="150px"
+            android:ems="10"
+            android:hint="Course Name"
+            android:inputType="textPersonName"
+            android:layout_margin="10px"
+            />
+
+        <EditText
+            android:id="@+id/degree_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Degree"
+            android:inputType="number"
+            android:layout_margin="10px"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="1: BTech, 2: MTech, 3: MSc, 4:PhD"
+            />
+
+        <EditText
+            android:id="@+id/branch_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Branch"
+            android:inputType="number"
+            android:layout_margin="10px"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="1: CSE, 2: EE, 3: ME, 4:CE, 5: CHE"
+            />
+
+        <EditText
+            android:id="@+id/course_from_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:editable="false"
+            android:hint="Course From"/>
+
+        <EditText
+            android:id="@+id/course_to_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:editable="false"
+            android:hint="Course To"/>
+
+        <TextView
+            android:id="@+id/add_course_feed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <Button
+            android:id="@+id/add_course_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"
+            android:layout_margin="10px"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</ScrollView>
